@@ -88,7 +88,7 @@ function FmtUserManagement($pagename) {
     
     $perms = $a['usergroups'];
     
-    $time1 = PSFT($TimeFmt, $a['stamp']);
+    $time1 = PSFT("%FT%R", $a['stamp']);
     $time2 = substr(PSFT('%L', $a['stamp']), 1);
     
     $stamp = ".center <time datetime='$time2'>$time1</time>";
@@ -106,7 +106,7 @@ function HandleAUsers($pagename) {
   
   if(isset($_POST['user_ids'])) {
     $perms = $_POST['perms'];
-    if(!preg_match('/^@(admins|editors|readers|patrons|clear)$/', $perms))
+    if(!preg_match('/^@(admins|editors|readers|patrons|translators|clear)$/', $perms))
       return Abort('?Invalid permissions, please contact support.');
     
     $uids = array_map('intval', $_POST['user_ids']);
