@@ -28,8 +28,6 @@ if($AuthId) {
     '/(?<!~)~~~~(?!~)/' => "$AuthorLink $CurrentLocalTime",
     '/(?<!~)~~~(?!~)/' => "$AuthorLink",
   );
-  
-//   xmps($AuthorLink);
 }
 else {
   $AuthorLink = "$Author (?)";
