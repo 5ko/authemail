@@ -9,7 +9,7 @@
   (at your option) any later version. See pmwiki.php for full details
   and lack of warranty.
 */
-$RecipeInfo['AuthEmail']['Version'] = '20230131';
+$RecipeInfo['AuthEmail']['Version'] = '20230222';
 
 if (@$_POST['authid']) AuthUserEmail();
 
@@ -74,7 +74,7 @@ function FmtUserManagement($pagename) {
     FROM pmwiki_users WHERE id>0 ORDER BY real_name ASC');
   
   $table = [];
-  $table[] = ['Name', 'Email', 'Permissions', 'Signed in'];
+  $table[] = ['Name', 'Email', 'Permissions', 'Signed in<span class="sort-time"></span>'];
   foreach($x as $id=>$a) {
     $profileurl = PageVar("$AuthorGroup.$id", '$PageUrl');
     $rname = PHSC($a['real_name']);
